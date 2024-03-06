@@ -39,11 +39,19 @@ namespace ForLoops
             Console.Write("How many time do you want to repeat it?: ");
             int loopCounter = Convert.ToInt32(Console.ReadLine());
             
-
-            for (int i = 0; i < loopCounter; i++)
+            // Taking care of case where user enter less than 0
+            if (loopCounter <= 0)
             {
-                Console.Write(i + ":");
-                Console.WriteLine(message);
+                Console.WriteLine("Sorry, please enter a value above 0");
+            }
+            else // >= 1
+            {
+
+                for (int i = 0; i < loopCounter; i++)
+                {
+                    Console.Write(i + ":");
+                    Console.WriteLine(message);
+                }
             }
 
             Console.ReadLine();
